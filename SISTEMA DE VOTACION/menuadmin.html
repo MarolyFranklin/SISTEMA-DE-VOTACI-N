@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Lateral</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            width: 250px;
+            background-color: #117813;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #ccc;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .sidebar a:hover {
+            background-color: #17ba27;
+            color: white;
+        }
+        .sidebar a.selected {
+            background-color: #3e4160;
+            color: white;
+            font-weight: bold;
+        }
+        .sidebar a img {
+            width: 20px;
+            height: 20px;
+        }
+
+
+        /* Contenido principal */
+        .content {
+            flex: 1;
+            position: relative; /* Necesario para que los hijos se posicionen correctamente */
+            padding: 20px;
+            overflow: hidden; /* Evita que la imagen de fondo se salga del contenedor */
+        }
+
+        /* Imagen de fondo desenfocada */
+        .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/FET.jpg');
+    background-size: 100% 100%; /* Fuerza la imagen a cubrir todo el espacio */
+    background-position: center;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+        /* Texto encima de la imagen */
+        .content h1, .content p {
+            position: relative; /* Posiciona el texto encima del fondo */
+            color: white;
+            z-index: 1; /* Asegura que el texto esté por encima de la imagen */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Agrega sombra para mayor legibilidad */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="img/Logo-FET-q5sdgaqv2nb2ekiucs8911k2e5eu12ktkoocilrpr6.png" alt="Logo de la Universidad" width="160" height="100">
+        
+        <a href="registro.php">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/conference.png" alt="Proyectos">
+            Registrar Votantes
+        </a>
+        <a href="insert_cand_year.php">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/conference.png" alt="Grupos">
+            Registrar Candidatos
+        </a>
+        <a href="listado_votante.php">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/flag.png" alt="Reportes">
+            Listado Votantes
+        </a>
+        <a href="insert_cand_year2.php">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/flag.png" alt="Reportes">
+            Listado Candidatos
+        </a>
+        <a href="result_year.php">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/flag.png" alt="Reportes">
+            Resultados
+        </a>
+        <a href="index.html">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/flag.png" alt="Reportes">
+            Salir
+        </a>
+    </div>
+    <div class="content">
+        <h1>¡BIENVENIDO ADMINISTRADOR!</h1>
+      
+    </div>
+
+    
+</body>
+</html>
